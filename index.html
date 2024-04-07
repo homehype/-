@@ -1,792 +1,616 @@
-*,
-html {
-	box-sizing: border-box;
-}
-
-html {
-	scroll-behavior: smooth;
-}
-
-body {
-	font-family: 'Jost', sans-serif;
-	color: #262626;
-	font-size: 16px;
-	font-style: normal;
-	font-weight: 400;
-	line-height: normal;
-	background: #cad114;
-}
-
-.container {
-	max-width: 1405px;
-	padding: 0 15px;
-	margin: 0 auto;
-}
-
-input {
-	outline: none;
-	border: none;
-}
-
-li {
-	list-style: none;
-	color: inherit;
-}
-
-a {
-	text-decoration: none;
-	color: inherit;
-	cursor: pointer;
-	outline: none;
-}
-
-button {
-	outline: none;
-	border: none;
-	background: none;
-	cursor: pointer;
-}
-
-.header {
-	min-height: calc(100vh - 80px);
-	padding-bottom: 50px;
-}
-
-.header__top {
-	padding: 20px 0;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-}
-
-.header__burger {
-	display: none;
-	width: 40px;
-	height: 40px;
-	border: none;
-	background: transparent;
-	position: relative;
-}
-
-.header__burger span {
-	position: absolute;
-	width: 30px;
-	height: 3px;
-	background-color: #262626;
-	transform: translateY(-50%);
-	left: 5px;
-	transition: transform 0.5s, opacity, background-color 0.5s;
-}
-
-.header__burger span:nth-child(1) {
-	transform: translateY(-12px);
-}
-
-.header__burger span:nth-child(3) {
-	transform: translateY(9px);
-}
-
-.header.open .header__burger span:nth-child(1) {
-	transform: translateY(0) rotate(-45deg);
-}
-
-.header.open .header__burger span:nth-child(2) {
-	opacity: 0;
-}
-
-.header.open .header__burger span:nth-child(3) {
-	transform: translateY(0) rotate(45deg);
-}
-
-.logo img {
-	width: 150px;
-	border-radius: 10px;
-}
-
-.header__logos-img {
-	border-radius: 50%;
-	transition: all 0.2s;
-}
-
-.header__logos-link + .header__logos-link {
-	margin-left: 20px;
-}
-.header__logos-img:hover {
-	transform: scale(1.2);
-}
-
-.header__logos-img {
-	width: 40px;
-	height: 40px;
-}
-.header__btn {
-	color: #eeeff1;
-	background-color: #262626;
-	text-transform: uppercase;
-	font-weight: 500;
-	padding: 10px 40px;
-	border-radius: 10px;
-	border: 2px solid #262626;
-	transition: all 0.3s;
-}
-
-.menu__list {
-	display: none;
-}
-
-.header__btn:hover {
-	color: #262626;
-	background-color: transparent;
-}
-
-.header__inner {
-	padding: 70px 0 80px;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-}
-
-.header__content {
-	max-width: 600px;
-}
-.header__title {
-	font-weight: 700;
-	font-size: 50px;
-	line-height: 55px;
-	margin-bottom: 50px;
-}
-.header__text {
-	max-width: 470px;
-	font-weight: 400;
-	font-size: 18px;
-	line-height: 23px;
-	margin-bottom: 40px;
-}
-.header__content-btn {
-	color: #eeeff1;
-	background-color: #262626;
-	text-transform: uppercase;
-	font-weight: 500;
-	padding: 10px 40px;
-	border-radius: 10px;
-	border: 2px solid #262626;
-	transition: all 0.3s;
-	display: inline-block;
-}
-
-.header__content-btn:hover {
-	color: #262626;
-	background-color: transparent;
-}
-.header__img {
-	width: 650px;
-	border-radius: 10px;
-}
-
-.ticker {
-	overflow: hidden;
-	position: relative;
-}
-
-.ticker__wrapper {
-	display: flex;
-	justify-content: center;
-	background: #262626;
-}
-
-.ticker__item {
-	white-space: nowrap;
-	font-size: 40px;
-	line-height: 40px;
-	font-weight: 600;
-	text-transform: uppercase;
-	flex-shrink: 0;
-	padding: 15px 50px;
-	color: #eeeff1;
-	animation: ticker 5s linear infinite;
-}
-
-@keyframes ticker {
-	0% {
-		transform: translateZ(0);
-	}
-	to {
-		transform: translate3d(-100%, 0, 0);
-	}
-}
-
-.products {
-	padding: 25px 0;
-	background: #cad114;
-}
-
-.btn-center {
-	text-align: center;
-	grid-template: 2 / 4 span;
-}
-
-.show-more {
-	font-family: 'Jost', sans-serif;
-	color: #262626;
-	font-weight: 500;
-	font-size: 22px;
-	transition: all 0.3s;
-}
-
-.show-more:hover {
-	color: #676464;
-}
-
-.products__title {
-	text-align: center;
-	text-transform: uppercase;
-	font-weight: 700;
-	font-size: 35px;
-	margin-bottom: 50px;
-}
-
-.hide {
-	display: none;
-}
-
-.products__search {
-	margin: 0 0 50px 10px;
-	max-width: 510px;
-	display: flex;
-	display: flex;
-	margin: 0 auto 50px;
-	align-items: center;
-	align-items: center;
-}
-
-.products__input {
-	border: 2px solid #cad114;
-	border-radius: 10px;
-	padding: 20px 320px 20px 50px;
-	font-family: 'Jost', sans-serif;
-	color: #262626;
-	font-weight: 400;
-	font-size: 15px;
-	position: relative;
-	width: 100%;
-	padding-right: 25px;
-}
-
-.products__search-btn {
-	position: absolute;
-	z-index: 10;
-	margin-left: 5px;
-}
-
-.products__items {
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr;
-	column-gap: 25px;
-	row-gap: 35px;
-	justify-items: center;
-	margin-bottom: 40px;
-}
-.products__item {
-	max-width: 300px;
-	padding-bottom: 15px;
-	border-radius: 15px;
-	background-color: #fff;
-	position: relative;
-}
-
-/* .products__item:nth-child(n + 9) {
-	display: none;
-} */
-
-.products__item.is-visible {
-	display: block;
-}
-
-.products__item-images {
-	position: relative;
-}
-
-.products__item-images img {
-	width: 300px;
-	border-radius: 15px 15px 0 0;
-	height: 300px;
-}
-.products__descr {
-	text-align: center;
-	font-weight: 500;
-	font-size: 20px;
-	line-height: 25px;
-	margin-bottom: 10px;
-	max-height: 100px;
-	overflow: hidden;
-	position: relative;
-	padding-bottom: 50px;
-	padding: 0 10px;
-}
-
-.products__btn {
-	position: relative;
-	color: #eeeff1;
-	background-color: #262626;
-	text-transform: uppercase;
-	font-weight: 500;
-	padding: 10px 40px;
-	border-radius: 10px;
-	border: 2px solid #262626;
-	transition: all 0.3s;
-	display: inline-block;
-	right: 0;
-	transform: translateX(33%);
-}
-
-.products__btn:hover {
-	color: #262626;
-	background-color: transparent;
-}
-
-/* .slick-prev,
-.slick-next {
-	position: absolute;
-	display: flex;
-	bottom: 0;
-	z-index: 10;
-	font-size: 0;
-	justify-content: center;
-	right: 0;
-	left: 0;
-	bottom: -15px;
-}
-
-.slick-prev {
-	margin-right: 70px;
-}
-.slick-next {
-	margin-right: -70px;
-}
-
-.slick-next::after {
-	position: absolute;
-	content: '';
-	background-image: url('../images/right-arrow.svg');
-	background-position: center;
-	background-size: contain;
-	background-repeat: no-repeat;
-	width: 50px;
-	height: 50px;
-}
-
-.slick-prev::after {
-	position: absolute;
-	content: '';
-	background-image: url('../images/right-arrow.svg');
-	background-position: center;
-	background-size: contain;
-	background-repeat: no-repeat;
-	width: 50px;
-	height: 50px;
-	transform: rotate(180deg);
-} */
-
-.footer {
-	padding: 20px 0;
-	background: #cad114;
-	border-top: 2px dashed #262626;
-}
-.footer__inner {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-}
-
-.footer__logos-img {
-	border-radius: 50%;
-	transition: all 0.2s;
-}
-
-.footer__logos-link + .footer__logos-link {
-	margin-left: 20px;
-}
-.footer__logos-img:hover {
-	transform: scale(1.2);
-}
-
-.footer__logos-img {
-	width: 40px;
-	height: 40px;
-}
-
-.footer__logo img {
-	width: 120px;
-}
-
-.footer__btn {
-	color: #eeeff1;
-	background-color: #262626;
-	text-transform: uppercase;
-	font-weight: 500;
-	padding: 10px 40px;
-	border-radius: 10px;
-	border: 2px solid #262626;
-	transition: all 0.3s;
-}
-
-.footer__btn:hover {
-	color: #262626;
-	background-color: transparent;
-}
-
-.footer__text {
-	text-align: center;
-	margin-bottom: 20px;
-	font-weight: 500;
-	font-size: 18px;
-	text-transform: uppercase;
-}
-
-@media (max-width: 1330px) {
-	.header__img {
-		width: 550px;
-	}
-
-	.header__title {
-		font-size: 45px;
-		line-height: 45px;
-		margin-bottom: 30px;
-	}
-	.header__inner {
-		padding: 50px 0 80px;
-	}
-}
-
-@media (max-width: 1310px) {
-	.products__items {
-		grid-template-columns: 1fr 1fr 1fr;
-	}
-}
-
-@media (max-width: 1130px) {
-	.header {
-		min-height: 0;
-	}
-	.header__img {
-		width: 400px;
-	}
-	.header__title {
-		max-width: 500px;
-		font-size: 40px;
-		line-height: 40px;
-	}
-	.header__text {
-		line-height: 20px;
-	}
-	.ticker__item {
-		font-size: 30px;
-		line-height: 30px;
-		padding: 15px 30px;
-	}
-}
-
-@media (max-width: 980px) {
-	.products__title {
-		margin-bottom: 25px;
-	}
-	.products__items {
-		grid-template-columns: 1fr 1fr;
-	}
-	.products__item {
-		padding-bottom: 10px;
-	}
-
-	.products__item-images {
-	}
-
-	.products__descr {
-		max-height: 25px;
-		font-size: 16px;
-		line-height: 20px;
-		margin-bottom: 0;
-	}
-
-	.products__search {
-		display: flex;
-		margin: 0 auto 50px;
-		align-items: center;
-	}
-
-	.products__items {
-		grid-template-columns: 1fr 1fr 1fr;
-	}
-
-	.products__item {
-		max-width: 210px;
-	}
-
-	.products__item-images img {
-		width: 210px;
-		height: 210px;
-	}
-
-	.products__btn {
-		display: none;
-	}
-}
-
-@media (max-width: 915px) {
-	.header__img {
-		display: none;
-	}
-
-	.header__content {
-		position: relative;
-	}
-	/* .header__content::after{
-		content: "";
-		position: absolute;
-		background-image: url('../images/decor.svg');
-		background-repeat: no-repeat;
-		width: 100%;
-		height: 100%;
-		
-	} */
-}
-
-@media (max-width: 730px) {
-	.header {
-		padding-bottom: 20px;
-	}
-	.products__items {
-		grid-template-columns: 1fr 1fr 1fr 1fr;
-		column-gap: -10px;
-		row-gap: 20px;
-	}
-
-	.products__item {
-		max-width: 126px;
-	}
-
-	.products__item-images img {
-		width: 126px;
-		height: 126px;
-	}
-	.products__descr {
-		font-size: 11px;
-	}
-}
-
-@media (max-width: 625px) {
-	.header__inner {
-		display: none;
-	}
-	.products {
-		padding: 15px;
-	}
-	.products__items {
-		grid-template-columns: 1fr 1fr;
-	}
-	.products__item {
-		max-width: 210px;
-	}
-
-	.products__item-images img {
-		width: 210px;
-		height: 210px;
-	}
-	.products__descr {
-		font-size: 16px;
-	}
-	.header.open .menu__list {
-		transform: translateX(100%);
-	}
-	.header__top {
-		padding: 10px 0;
-	}
-	.header__inner {
-		padding: 20px 0 50px;
-	}
-	.logo {
-		order: 1;
-	}
-
-	.logo img {
-		width: 120px;
-	}
-
-	.header__logos {
-		display: none;
-	}
-	.header__btn {
-		display: none;
-	}
-	.header__top-mobile {
-		background: #80832d;
-	}
-	.header__burger {
-		display: block;
-		z-index: 30;
-	}
-
-	.menu__list {
-		display: block;
-		top: 0;
-		left: -100%;
-		position: absolute;
-		color: #000;
-		text-align: center;
-		/* background: #969d33; */
-		background: #aeb406;
-		padding: 70px 50px 30px;
-		width: 100%;
-		height: 100vh;
-		transition: transform 0.5s;
-		z-index: 20;
-	}
-
-	.menu__list-text {
-		font-family: 'Jost', sans-serif;
-		font-weight: 600;
-		font-size: 24px;
-		margin-bottom: 35px;
-	}
-
-	.menu__list-item {
-		list-style: none;
-		font-weight: 400;
-		font-size: 20px;
-	}
-
-	.menu__list-link {
-		position: relative;
-		padding-right: 30px;
-	}
-
-	.menu__list-link--tel::after {
-		content: '';
-		position: absolute;
-		background-image: url('../images/telegram-mob.svg');
-		background-repeat: no-repeat;
-		width: 40px;
-		height: 40px;
-		right: -20px;
-		top: -3px;
-	}
-	.menu__list-link--inst::after {
-		content: '';
-		position: absolute;
-		background-image: url('../images/instagram-mob.svg');
-		background-repeat: no-repeat;
-		width: 40px;
-		height: 40px;
-		right: -20px;
-		top: -4px;
-	}
-
-	.menu__list-link--tik::after {
-		content: '';
-		position: absolute;
-		background-image: url('../images/tiktok-mob.svg');
-		background-repeat: no-repeat;
-		width: 40px;
-		height: 40px;
-		right: -20px;
-		top: -7px;
-	}
-
-	.menu__list-link--pin::after {
-		content: '';
-		position: absolute;
-		background-image: url('../images/pinterest-mob.svg');
-		background-repeat: no-repeat;
-		width: 40px;
-		height: 40px;
-		right: -20px;
-		top: -5px;
-	}
-
-	.menu__list li + li {
-		margin-top: 35px;
-	}
-
-	.menu__btn {
-		color: #eeeff1;
-		background-color: #262626;
-		text-transform: uppercase;
-		font-weight: 500;
-		padding: 10px 40px;
-		border-radius: 10px;
-		border: 2px solid #262626;
-		transition: all 0.3s;
-		display: block;
-		margin-top: 35px;
-	}
-	.ticker__item {
-		font-size: 25px;
-		line-height: 25px;
-	}
-
-	.footer__btn {
-		display: none;
-	}
-}
-
-@media (max-width: 490px) {
-	.products__items {
-		grid-template-columns: 1fr 1fr;
-	}
-	.products__item {
-		max-width: 175px;
-	}
-
-	.products__item-images img {
-		width: 175px;
-		height: 175px;
-	}
-	.products__search {
-		margin-bottom: 35px;
-	}
-}
-@media (max-width: 430px) {
-	.header__title {
-		font-size: 35px;
-		line-height: 35px;
-	}
-
-	.products__item {
-		max-width: 160px;
-	}
-
-	.products__item-images img {
-		width: 160px;
-		height: 160px;
-	}
-}
-
-@media (max-width: 390px) {
-	.products__items {
-		grid-template-columns: 1fr;
-	}
-	.products__item {
-		max-width: 270px;
-	}
-
-	.products__item-images img {
-		width: 270px;
-		height: 270px;
-	}
-	.footer__logos-link + .footer__logos-link {
-		margin-left: 10px;
-	}
-	.footer__logos-link + .footer__logos-link {
-		margin-left: 10px;
-	}
-}
-
-@media (max-width: 355px) {
-	.products__item {
-		max-width: 250px;
-	}
-
-	.products__item-images img {
-		width: 250px;
-		height: 250px;
-	}
-}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Home Hype</title>
+  <link rel="icon" type="image/png" href="./images/logo-icon.png">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/slick.css">
+  <link rel="stylesheet" href="css/jquery.fancybox.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <header class="header">
+    <div class="container header__container">
+      <ul class="menu__list">
+        <div class="menu__list-text">
+          Follow us:
+        </div>
+        <li class="menu__list-item">
+          <a class="menu__list-link menu__list-link--tel" href="https://t.me/home_hype">
+            Telegram
+          </a>
+        </li>
+        <li class="menu__list-item">
+          <a class="menu__list-link menu__list-link--inst" href="https://www.instagram.com/home__hype/">
+            Instagram
+          </a>
+        </li>
+        <li class="menu__list-item">
+          <a class="menu__list-link menu__list-link--tik" href="https://www.tiktok.com/@home__hype">
+            TikTok
+          </a>
+        </li>
+        <li class="menu__list-item">
+          <a class="menu__list-link menu__list-link--pin" href="https://pin.it/7A0I9vM0e">
+            Pinterest
+          </a>
+        </li>
+        <a class="menu__btn" href="mailto:udb29290@gmail.com">
+          contact
+        </a>
+      </ul>
+      <div class="header__top">
+        <a class="logo" href="#">
+          <img src="./images/logo.png" alt="">
+        </a>
+        <div class="header__logos">
+          <a class="header__logos-link" target="_blank" href="https://www.tiktok.com/@home__hype">
+            <img class="header__logos-img" src="./images/tiktok.svg" alt="">
+          </a>
+          <a class="header__logos-link" target="_blank" href="https://pin.it/4f7TJaRNg">
+            <img class="header__logos-img" src="./images/pinterest.svg" alt="">
+          </a>
+          <a class="header__logos-link" target="_blank" href="https://www.instagram.com/home__hype/">
+            <img class="header__logos-img" src="./images/instagram.svg" alt="">
+          </a>
+          <a class="header__logos-link" target="_blank" href="https://t.me/home_hype">
+            <img class="header__logos-img" src="./images/telegram.svg" alt="">
+          </a>
+        </div>
+        <a class="header__btn" href="mailto:udb29290@gmail.com">
+          contact
+        </a>
+        <button class="header__burger" id="burger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+      <div class="header__inner">
+        <div class="header__content">
+          <h1 class="header__title">
+            Elevate your home and lifestyle with curated essentials. Discover now!
+          </h1>
+          <div class="header__text">
+            Transform your living spaces with our curated collection of home essentials. Choose functional and stylish
+            products
+            for every lifestyle
+          </div>
+          <a class="header__content-btn" href="mailto:home.hype.connect@gmail.com">
+            contact
+          </a>
+        </div>
+        <img class="header__img" src="./images/header-img.jpg" alt="">
+      </div>
+    </div>
+    <div class="ticker">
+      <div class="ticker__wrapper">
+        <div class="ticker__item">best stuff</div>
+        <div class="ticker__item">best stuff</div>
+        <div class="ticker__item">best stuff</div>
+        <div class="ticker__item">best stuff</div>
+        <div class="ticker__item">best stuff</div>
+        <div class="ticker__item">best stuff</div>
+        <div class="ticker__item">best stuff</div>
+      </div>
+    </div>
+  </header>
+  <section class="products">
+    <div class="container">
+      <h2 class="products__title">
+        products
+      </h2>
+      <div class="products__search">
+        <button class="products__search-btn">
+          <img src="./images/search.svg" alt="">
+        </button>
+        <input class="products__input" type="text" id="input" placeholder="Search">
+      </div>
+      <div class="products__items">
+        <div class="products__item">
+          <a class="products__item-link" href="https://s.click.aliexpress.com/e/_DD0JSEH">
+            <div class="products__item-images">
+              <img src="./images/moutain-glass.webp" alt="">
+            </div>
+            <div class="products__descr">
+              Mountain Glass
+            </div>
+          </a>
+          <a class="products__btn" href="https://s.click.aliexpress.com/e/_DD0JSEH">
+            check price
+          </a>
+          </a>
+        </div>
+        <div class="products__item">
+          <a class="products__item-link" href="https://amzn.to/49osev1">
+            <div class="products__item-images">
+              <img src="./images/slug-lamp.jpg" alt="">
+            </div>
+            <div class="products__descr">
+              Slug Light Lamp
+            </div>
+          </a>
+          <a class="products__btn" href="https://amzn.to/49osev1">
+            check price
+          </a>
+          </a>
+        </div>
+        <div class="products__item">
+          <a class="products__item-link" href="https://amzn.to/3J68Zf3">
+            <div class="products__item-images">
+              <img src="./images/owl-holder.avif" alt="" style="padding: 30px 50px;">
+            </div>
+            <div class="products__descr">
+              Owl Key Holder
+            </div>
+          </a>
+          <a class="products__btn" href="https://amzn.to/3J68Zf3">
+            check price
+          </a>
+          </a>
+        </div>
+        <div class="products__item">
+          <a class="products__item-link" href="https://amzn.to/3x93GZJ">
+            <div class="products__item-images">
+              <img src="./images/lid-brush.avif" alt="">
+            </div>
+            <div class="products__descr">
+              Lid Brush
+            </div>
+          </a>
+          <a class="products__btn" href="https://amzn.to/3x93GZJ">
+            check price
+          </a>
+          </a>
+        </div>
+        <div class="products__item">
+          <a class="products__item-link" href="https://amzn.to/4a6hliM">
+            <div class="products__item-images">
+              <img src="./images/air-compressor.avif" alt="">
+            </div>
+            <div class="products__descr">
+              Portable Compressor
+            </div>
+          </a>
+          <a class="products__btn" href="https://amzn.to/4a6hliM">
+            check price
+          </a>
+          </a>
+        </div>
+        <div class="products__item">
+          <a class="products__item-link" href="https://amzn.to/4a2jEn2">
+            <div class="products__item-images">
+              <img src="./images/steamer-iron.jpg" alt="">
+            </div>
+            <div class="products__descr">
+              Steamer Iron
+            </div>
+          </a>
+          <a class="products__btn" href="https://amzn.to/4a2jEn2">
+            check price
+          </a>
+          </a>
+        </div>
+        <div class="products__item">
+          <a class="products__item-link" href="https://amzn.to/3VsmJIe">
+            <div class="products__item-images">
+              <img src="./images/magnetic-bottle.jpg" alt="">
+            </div>
+            <div class="products__descr">
+              Magnetic Bottle
+            </div>
+          </a>
+          <a class="products__btn" href="https://amzn.to/3VsmJIe">
+            check price
+          </a>
+          </a>
+        </div>
+        <div class="products__item">
+          <a class="products__item-link" href="https://amzn.to/3vfnqKu">
+            <div class="products__item-images">
+              <img src="./images/food-scale.jpg" alt="">
+            </div>
+            <div class="products__descr">
+              Food Scale
+            </div>
+          </a>
+          <a class="products__btn" href="https://amzn.to/3vfnqKu">
+            check price
+          </a>
+          </a>
+        </div>
+        <div class="products__item">
+          <a class="products__item-link" href="https://amzn.to/3IBl3Ve">
+            <div class="products__item-images">
+              <img src="./images/humidifier.png" alt="">
+            </div>
+            <div class="products__descr">
+              Rain Humidifier
+            </div>
+          </a>
+          <a class="products__btn" href="https://amzn.to/3IBl3Ve">
+            check price
+          </a>
+          </a>
+        </div>
+        <div class="products__item">
+          <a class="products__item-link" href="https://s.click.aliexpress.com/e/_DdpIDUV">
+            <div class="products__item-images">
+              <img src="./images/chopper.webp" alt="">
+            </div>
+            <div class="products__descr">
+              Electric Chopper
+            </div>
+          </a>
+          <a class="products__btn" href="https://s.click.aliexpress.com/e/_DdpIDUV">
+            check price
+          </a>
+          </a>
+        </div>
+        <div class="products__item">
+          <a class="products__item-link" href="https://amzn.to/3v7BC8f">
+            <div class="products__item-images">
+              <img src="./images/pot.jpg" alt="">
+            </div>
+            <div class="products__descr">
+              Levitating Pot
+            </div>
+          </a>
+          <a class="products__btn" href="https://amzn.to/3v7BC8f">
+            check price
+          </a>
+          </a>
+        </div>
+        <div class="products__item">
+          <a class="products__item-link" href="https://amzn.to/48KWLTq">
+            <div class="products__item-images">
+              <img src="./images/plasma-globe.jpg" alt="">
+            </div>
+            <div class="products__descr">
+              Plasma Globe
+            </div>
+          </a>
+          <a class="products__btn" href="https://amzn.to/48KWLTq">
+            check price
+          </a>
+          </a>
+        </div>
+        <div class="products__item">
+          <a class="products__item-link" href="https://amzn.to/49Lme0y">
+            <div class="products__item-images">
+              <img src="./images/sand-art.jpg" alt="">
+            </div>
+            <div class="products__descr">
+              Moving Sand Art
+            </div>
+          </a>
+          <a class="products__btn" href="https://amzn.to/49Lme0y">
+            check price
+          </a>
+          </a>
+        </div>
+        <div class="products__item">
+          <a class="products__item-link" href="https://amzn.to/3uWu3Bj">
+            <div class="products__item-images">
+              <img src="./images/mini-speaker.jpg" alt="">
+            </div>
+            <div class="products__descr">
+              Mini Speaker
+            </div>
+          </a>
+          <a class="products__btn" href="https://amzn.to/3uWu3Bj">
+            check price
+          </a>
+          </a>
+        </div>
+        <div class="products__item">
+          <a class="products__item-link" href="https://amzn.to/3T41k5t">
+            <div class="products__item-images">
+              <img src="./images/pillow.jpg" alt="">
+            </div>
+            <div class="products__descr">
+              Cervical Pillow
+            </div>
+          </a>
+          <a class="products__btn" href="https://amzn.to/3T41k5t">
+            check price
+          </a>
+          </a>
+        </div>
+        <div class="products__item">
+          <a class="products__item-link" href="https://amzn.to/3SYMcpV">
+            <div class="products__item-images">
+              <img src="./images/sleep-headphones.jpg" alt="">
+            </div>
+            <div class="products__descr">
+              Sleep Headphones
+            </div>
+          </a>
+          <a class="products__btn" href="https://amzn.to/3SYMcpV">
+            check price
+          </a>
+          </a>
+        </div>
+        <div class="products__item">
+          <a class="products__item-link" href="https://amzn.to/3wybjs5">
+            <div class="products__item-images">
+              <img src="./images/nightlight.jpg" alt="">
+            </div>
+            <div class="products__descr">
+              Nightlight
+            </div>
+          </a>
+          <a class="products__btn" href="https://amzn.to/3wybjs5">
+            check price
+          </a>
+          </a>
+        </div>
+        <div class="products__item">
+          <a class="products__item-link" href="https://amzn.to/49W2oPA">
+            <div class="products__item-images">
+              <img src="./images/butter-planter.jpg" alt="">
+            </div>
+            <div class="products__descr">
+              Butter Planter
+            </div>
+          </a>
+          <a class="products__btn" href="https://amzn.to/49W2oPA">
+            check price
+          </a>
+          </a>
+        </div>
+        <div class="products__item">
+          <a class="products__item-link" href="https://amzn.to/3SXkhH4">
+            <div class="products__item-images">
+              <img src="./images/stainless-knifes.jpg" alt="">
+            </div>
+            <div class="products__descr">
+              Stainless Knives
+            </div>
+          </a>
+          <a class="products__btn" href="https://amzn.to/3SXkhH4">
+            check price
+          </a>
+          </a>
+        </div>
+        <div class="products__item">
+          <a class="products__item-link" href="https://amzn.to/3SWPiuE">
+            <div class="products__item-images">
+              <img src="./images/gamescent.jpg" alt="">
+            </div>
+            <div class="products__descr">
+              GameScent
+            </div>
+          </a>
+          <a class="products__btn" href="https://amzn.to/3SWPiuE">
+            check price
+          </a>
+          </a>
+        </div>
+        <div class="products__item">
+          <a class="products__item-link" href="https://s.click.aliexpress.com/e/_DFFiPRP">
+            <div class="products__item-images">
+              <img src="./images/stirring-mug.webp" alt="">
+            </div>
+            <div class="products__descr">
+              Stirring Mug
+            </div>
+          </a>
+          <a class="products__btn" href="https://s.click.aliexpress.com/e/_DFFiPRP">
+            check price
+          </a>
+          </a>
+        </div>
+        <div class="products__item">
+          <a class="products__item-link" href="https://s.click.aliexpress.com/e/_Dk17koH">
+            <div class="products__item-images">
+              <img src="./images/shoe-dryers.webp" alt="">
+            </div>
+            <div class="products__descr">
+              Shoe Dryers
+            </div>
+          </a>
+          <a class="products__btn" href="https://s.click.aliexpress.com/e/_Dk17koH">
+            check price
+          </a>
+          </a>
+        </div>
+        <div class="products__item">
+          <a class="products__item-link" href="https://s.click.aliexpress.com/e/_olzFZdY">
+            <div class="products__item-images">
+              <img src="./images/kitchen-sink.jpg" alt="">
+            </div>
+            <div class="products__descr">
+              Kitchen Sink
+            </div>
+          </a>
+          <a class="products__btn" href="https://s.click.aliexpress.com/e/_olzFZdY">
+            check price
+          </a>
+          </a>
+        </div>
+        <div class="products__item">
+          <a class="products__item-link" href="https://s.click.aliexpress.com/e/_DBVOs0l">
+            <div class="products__item-images">
+              <img src="./images/clock-1.jpg" alt="">
+            </div>
+            <div class="products__descr">
+              Flip Clock
+            </div>
+            <a class="products__btn" href="https://s.click.aliexpress.com/e/_olMdOLo">
+              check price
+            </a>
+          </a>
+        </div>
+        <div class="products__item">
+          <a class="products__item-link" href="https://amzn.to/3IdG60a">
+            <div class="products__item-images">
+              <img src="./images/planet-1.jpg" alt="">
+            </div>
+            <div class="products__descr">
+              Floating Globe
+            </div>
+            <a class="products__btn" href="https://amzn.to/3IdG60a">
+              check price
+            </a>
+          </a>
+        </div>
+        <div class="products__item">
+          <a class="products__item-link" href="https://amzn.to/3UNLvCB">
+            <div class="products__item-images">
+              <img src="./images/charger-2.jpg" alt="">
+            </div>
+            <div class="products__descr">
+              Flexible Charger
+            </div>
+            <a class="products__btn" href="https://amzn.to/3UNLvCB">
+              check price
+            </a>
+          </a>
+        </div>
+        <div class="products__item">
+          <a class="products__item-link" href="https://amzn.to/3OZEiLR">
+            <div class="products__item-images">
+              <img src="./images/bottle-1.jpg" alt="">
+            </div>
+            <div class="products__descr">
+              Double Tumbler
+            </div>
+            <a class="products__btn" href="https://amzn.to/3OZEiLR">
+              check price
+            </a>
+          </a>
+        </div>
+        <div class="products__item">
+          <a class="products__item-link" href="https://s.click.aliexpress.com/e/_DcxzeSp">
+            <div class="products__item-images">
+              <img src="./images/booklight-1.webp" alt="">
+            </div>
+            <div class="products__descr">
+              Book Lamp
+            </div>
+            <a class="products__btn" href="https://s.click.aliexpress.com/e/_DcxzeSp">
+              check price
+            </a>
+          </a>
+        </div>
+        <div class="products__item">
+          <a class="products__item-link" href="https://s.click.aliexpress.com/e/_DF4QSJT">
+            <div class="products__item-images">
+              <img src="./images/carhoodie-1.webp" alt="">
+            </div>
+            <div class="products__descr">
+              Gear Cover
+            </div>
+            <a class="products__btn" href="https://s.click.aliexpress.com/e/_DF4QSJT">
+              check price
+            </a>
+          </a>
+        </div>
+        <div class="products__item">
+          <a class="products__item-link" href="https://s.click.aliexpress.com/e/_DekvGFx">
+            <div class="products__item-images">
+              <img src="./images/difuser-1.webp" alt="">
+            </div>
+            <div class="products__descr">
+              Air Diffuser
+            </div>
+            <a class="products__btn" href="https://s.click.aliexpress.com/e/_DekvGFx">
+              check price
+            </a>
+          </a>
+        </div>
+      </div>
+      <!-- <div class="btn-center">
+        <button class="show-more">
+          Show more
+        </button>
+      </div> -->
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <a class="footer__logo" href="#">
+          <img src="./images/logo.png" alt="">
+        </a>
+        <div class="footer__block">
+          <div class="footer__text">
+            Follow us:
+          </div>
+          <div class="footer__logos">
+            <a class="footer__logos-link" target="_blank" href="https://www.tiktok.com/@home__hype">
+              <img class="footer__logos-img" src="./images/tiktok.svg" alt="">
+            </a>
+            <a class="footer__logos-link" target="_blank" href="https://pin.it/4f7TJaRNg">
+              <img class="footer__logos-img" src="./images/pinterest.svg" alt="">
+            </a>
+            <a class="footer__logos-link" target="_blank" href="https://www.instagram.com/home__hype/">
+              <img class="footer__logos-img" src="./images/instagram.svg" alt="">
+            </a>
+            <a class="footer__logos-link" target="_blank" href="https://t.me/home_hype">
+              <img class="footer__logos-img" src="./images/telegram.svg" alt="">
+            </a>
+          </div>
+        </div>
+        <a class="footer__btn" href="mailto:home.hype.connect@gmail.com">
+          contact
+        </a>
+      </div>
+    </div>
+  </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="js/slick.min.js"></script>
+  <script src="js/jquery.fancybox.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
